@@ -23,15 +23,15 @@ export const Sparkline: React.FC<{
 }> = ({ width, height, data = testData }) => {
   const graphWidth = width - MARGINS.left - MARGINS.right
   const graphHeight = height - MARGINS.top - MARGINS.bottom
-  console.log('data???', data)
 
+  if (!data.length) return <></>
   const x = scaleLinear()
     .range([0, graphWidth])
     .domain(extent(data, (d) => d[0]))
 
   const y = scaleLinear()
     .range([graphHeight, 0])
-    .domain([0, max(data, (d) => d[1]) || 0])
+    .domain(extent(data, (d) => d[1]))
 
   const l = line()
     .x((d) => x(d[0]))
@@ -69,10 +69,11 @@ export const Sparkline: React.FC<{
           <text y={height} x={MARGINS.left} fill="var(--text)">
             {min(data, (d) => d[0])}
           </text>
-          <text y={height} x={width - MARGINS.right} fill="var(--text)">
+          <text y={height} x={width - MARGINS.right} textAnchor="end" fill="var(--text)">
             {max(data, (d) => d[0])}
           </text>
         </g>
+
         <defs>
           <linearGradient id="gradient" y2={0} x1={1} x2={1} y1={1}>
             <stop offset="0%" stopColor="rgba(0,0,0,0)" />
