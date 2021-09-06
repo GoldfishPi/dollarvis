@@ -10,6 +10,11 @@
     rgba(178, 255, 89, 0.63) 0.12%, 
     rgba(178, 255, 89, 0) 100%
     ), var(--secondary);
+
+    --font-00:24px;
+    --font-40:48px;
+    --font-80:72px;
+    --font-90:144px;
 }
 html {
     box-sizing: border-box;
@@ -101,11 +106,13 @@ html {
 
     h1 {
         margin-top: 0;
-        /* font-size: ${dimensions.headingSizes.h1}rem; */
+        font-size:72px;
+        line-height:84px;
     }
 
     h2 {
-        /* font-size: ${dimensions.headingSizes.h2}rem; */
+        font-size:var(--font-90);
+        line-height:169px;
     }
 
     h3 {
@@ -120,6 +127,8 @@ html {
         margin-top: 0;
         margin-bottom: 1rem;
         color:var(--text);
+        font-size:24px;
+        line-height: 28px;
     }
 
     strong {
