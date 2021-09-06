@@ -33,9 +33,12 @@ const IndexPage = () => {
     return calculateCompoundInterest(principal, interestRate, end - age)
   }, [age, principal, end, interestRate])
 
-  const trend = new Array(age > end ? 0 : end - (age || 0)).fill([0, 0]).map((_, i) => {
-    return [i + age, calculateCompoundInterest(principal, interestRate, i)]
-  })
+  const trend = [
+    ...new Array(age > end ? 0 : end - (age || 0)).fill([0, 0]).map((_, i) => {
+      return [i + age, calculateCompoundInterest(principal, interestRate, i)]
+    }),
+    [end, total]
+  ]
   return (
     <Page>
       <Layout>
@@ -50,7 +53,7 @@ const IndexPage = () => {
           </InputGroup>
         </InputHalf>
         <InputHalf>
-          <h2>$ {total}</h2>
+          <h2>$ {new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(total)}</h2>
           <Sparkline width={500} height={385} data={trend} />
         </InputHalf>
       </Layout>
