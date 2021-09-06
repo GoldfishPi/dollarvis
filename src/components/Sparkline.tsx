@@ -1,5 +1,6 @@
 import React from 'react'
 import { scaleTime, extent, scaleLinear, max, min, line, curveMonotoneX, area } from 'd3'
+import { abbreviateNumber } from 'js-abbreviation-number'
 
 const testData: [number, number][] = [
   [0, 0],
@@ -61,10 +62,16 @@ export const Sparkline: React.FC<{
         </g>
         <g className="legend">
           <text x={0} y={0 + 20} fill="var(--text)">
-            {max(data, (d) => d[1])}
+            {abbreviateNumber(
+              max(data, (d) => d[1]),
+              0
+            )}
           </text>
           <text x={0} y={graphHeight} fill="var(--text)">
-            {min(data, (d) => d[1])}
+            {abbreviateNumber(
+              min(data, (d) => d[1]),
+              0
+            )}
           </text>
           <text y={height} x={MARGINS.left} fill="var(--text)">
             {min(data, (d) => d[0])}
