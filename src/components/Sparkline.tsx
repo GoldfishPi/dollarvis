@@ -73,11 +73,11 @@ export const Sparkline: React.FC<{
               0
             )}
           </text>
-          <text y={height} x={MARGINS.left} fill="var(--text)">
-            {min(data, (d) => d[0])}
+          <text y={height - 10} x={MARGINS.left} fill="var(--text)">
+            {min(data, (d) => d[0])} yr
           </text>
-          <text y={height} x={width - MARGINS.right} textAnchor="end" fill="var(--text)">
-            {max(data, (d) => d[0])}
+          <text y={height - 10} x={width - MARGINS.right} textAnchor="end" fill="var(--text)">
+            {max(data, (d) => d[0])} yr
           </text>
         </g>
 
