@@ -43,9 +43,9 @@ const IndexPage = () => {
     <Page>
       <Layout>
         <InputHalf>
-          <h1>How Much does your money cost?</h1>
+          <h1>How much does your money cost?</h1>
           <p>
-            As we get older compound interest get’s less time to take effect. Use this tool to determine how much your money really costs
+            As we get older compound interest gets less time to take effect. Use this tool to determine how much your money really costs!
           </p>
           <InputGroup>
             <NumperInput placeholder="Spend" type="number" onChange={(e) => setPrincipal(e.target.value)} />
