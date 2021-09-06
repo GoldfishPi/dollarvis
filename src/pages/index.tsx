@@ -23,15 +23,19 @@ const InputHalf = styled.div`
 
 const calculateCompoundInterest = (p: number, interestRate: number, time: number) => Math.round(p * (1 + interestRate) ** time)
 const IndexPage = () => {
-  const blah = ''
   const [age, setAge] = React.useState<number>()
   const [principal, setPrincipal] = React.useState<number>()
-  const [end] = React.useState(50)
+  const [end] = React.useState(60)
   const [interestRate] = React.useState(0.07)
+
   const total = React.useMemo(() => {
     if (!principal || !age) return 0
     return calculateCompoundInterest(principal, interestRate, end - age)
   }, [age, principal, end, interestRate])
+
+  const trend = new Array(age > end ? 0 : end - (age || 0)).fill([0, 0]).map((_, i) => {
+    return [i + age, calculateCompoundInterest(principal, interestRate, i)]
+  })
   return (
     <Page>
       <Layout>
@@ -42,12 +46,12 @@ const IndexPage = () => {
           </p>
           <InputGroup>
             <NumperInput placeholder="Spend" type="number" onChange={(e) => setPrincipal(e.target.value)} />
-            <NumperInput placeholder="Age" type="number" onChange={(e) => setAge(e.target.value)} />
+            <NumperInput placeholder="Age" type="number" onChange={(e) => setAge(parseInt(e.target.value, 10))} />
           </InputGroup>
         </InputHalf>
         <InputHalf>
           <h2>$ {total}</h2>
-          <Sparkline width={500} height={385} />
+          <Sparkline width={500} height={385} data={trend} />
         </InputHalf>
       </Layout>
     </Page>
