@@ -1,20 +1,12 @@
-import * as React from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 
-import { dimensions } from '../styles/variables'
-
-const StyledPage = styled.div`
-  display: block;
-  flex: 1;
-  position: relative;
-  padding: ${dimensions.containerPadding}rem;
-  margin-bottom: 3rem;
+const Background = styled.div`
+  background: var(--background);
+  width: 100vw;
+  height: 100vh;
 `
-
-interface PageProps {
-  className?: string
+const Page: React.FC<{}> = ({ children }) => {
+  return <Background>{children}</Background>
 }
-
-const Page: React.FC<PageProps> = ({ children, className }) => <StyledPage className={className}>{children}</StyledPage>
-
 export default Page
