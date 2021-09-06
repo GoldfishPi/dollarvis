@@ -1,7 +1,9 @@
 :root {
     --primary:#B2FF59;
     --secondary:#234099;
-    --text:#FFF;
+
+    --white:#FFF;
+    --text:var(--white);
 
     --font-family:Roboto;
 

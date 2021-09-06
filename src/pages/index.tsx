@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import Page from '../components/Page'
 import styled from '@emotion/styled'
 import { NumperInput } from '../components/NumperInput'
+import { Sparkline } from '../components/Sparkline'
 
 const Layout = styled.div`
   padding: 4rem;
@@ -33,6 +33,7 @@ const IndexPage = () => (
       </InputHalf>
       <div>
         <h2>$108.89</h2>
+        <Sparkline width={500} height={385} />
       </div>
     </Layout>
   </Page>
