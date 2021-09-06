@@ -8,7 +8,7 @@ const Layout = styled.div`
   padding: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 20rem;
 `
 const InputGroup = styled.div`
   display: flex;
