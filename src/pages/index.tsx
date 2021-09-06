@@ -31,10 +31,10 @@ const IndexPage = () => (
           <NumperInput placeholder="Age" type="number" />
         </InputGroup>
       </InputHalf>
-      <div>
+      <InputHalf>
         <h2>$108.89</h2>
         <Sparkline width={500} height={385} />
-      </div>
+      </InputHalf>
     </Layout>
   </Page>
 )
