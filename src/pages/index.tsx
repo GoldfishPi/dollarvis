@@ -5,10 +5,13 @@ import { NumperInput } from '../components/NumperInput'
 import { Sparkline } from '../components/Sparkline'
 
 const Layout = styled.div`
-  padding: 4rem;
+  padding: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20rem;
+  gap: 4rem;
+  @media screen and (min-width: 1400px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem;
+  }
 `
 const InputGroup = styled.div`
   display: flex;
@@ -18,7 +21,10 @@ const InputGroup = styled.div`
 const InputHalf = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 2rem;
+  @media screen and (min-width: 1400px) {
+    gap: 12rem;
+  }
 `
 
 const calculateCompoundInterest = (p: number, interestRate: number, time: number) => Math.round(p * (1 + interestRate) ** time)
@@ -54,7 +60,11 @@ const IndexPage = () => {
         </InputHalf>
         <InputHalf>
           <h2>$ {new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(total)}</h2>
-          <Sparkline width={500} height={385} data={trend} />
+          <Sparkline
+            width={document.body.clientWidth < 1400 ? 300 : 500}
+            height={document.body.clientWidth < 1400 ? 200 : 350}
+            data={trend}
+          />
         </InputHalf>
       </Layout>
     </Page>

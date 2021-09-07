@@ -12,10 +12,10 @@
     rgba(178, 255, 89, 0.63) 0.12%, 
     rgba(178, 255, 89, 0) 100%
     ), var(--secondary);
-    --font-00:24px;
-    --font-40:48px;
-    --font-80:20px;
-    --font-90:144px;
+    --font-00:16px;
+    --font-40:32px;
+    --font-80:48px;
+    --font-90:52px;
 }
 @media screen and (min-width: 1400px) {
     :root {
