@@ -12,12 +12,20 @@
     rgba(178, 255, 89, 0.63) 0.12%, 
     rgba(178, 255, 89, 0) 100%
     ), var(--secondary);
-
     --font-00:24px;
     --font-40:48px;
-    --font-80:72px;
+    --font-80:20px;
     --font-90:144px;
 }
+@media screen and (min-width: 1400px) {
+    :root {
+        --font-00:24px;
+        --font-40:48px;
+        --font-80:72px;
+        --font-90:144px;
+    }
+}
+
 html {
     box-sizing: border-box;
 }
@@ -102,19 +110,18 @@ html {
         margin-bottom: .5rem;
         color: var(--text);
         font-weight: 600;
-        /* line-height: ${dimensions.lineHeight.heading}; */
+        line-height: 100%;
         text-rendering: optimizeLegibility;
     }
 
     h1 {
         margin-top: 0;
-        font-size:72px;
-        line-height:84px;
+        font-size:var(--font-80);
+        /* line-height:84px; */
     }
 
     h2 {
         font-size:var(--font-90);
-        line-height:169px;
     }
 
     h3 {
@@ -130,7 +137,7 @@ html {
         margin-bottom: 1rem;
         color:var(--text);
         font-size:24px;
-        line-height: 28px;
+        line-height: 100%;
     }
 
     strong {
