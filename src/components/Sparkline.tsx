@@ -46,7 +46,7 @@ export const Sparkline: React.FC<{
 
   return (
     <div>
-      <svg width={width} height={height} fill="green">
+      <svg fill="green" viewBox={`0 0 ${width} ${height}`}>
         <g width={graphWidth} height={graphHeight} transform={`translate(${MARGINS.left}, ${MARGINS.top})`}>
           <g className="axis">
             <line x1={0} x2={graphWidth} y1={graphHeight} y2={graphHeight} stroke="var(--text)" strokeWidth={5} strokeDasharray="10" />
