@@ -8,7 +8,9 @@ const Layout = styled.div`
   padding: 2rem;
   display: grid;
   gap: 4rem;
-  @media screen and (min-width: 1400px) {
+  flex-grow: 1;
+  align-items: center;
+  @media screen and (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
     padding: 4rem;
   }
