@@ -62,7 +62,7 @@ const IndexPage = () => {
         </InputHalf>
         <div>
           <h2>$ {new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(total)}</h2>
-          <Sparkline width={500} height={350} data={trend} />
+          <Sparkline width={500} height={350} data={trend as [number, number][]} />
         </div>
       </Layout>
     </Page>
