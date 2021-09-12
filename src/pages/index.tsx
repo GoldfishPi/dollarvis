@@ -60,10 +60,10 @@ const IndexPage = () => {
             <NumperInput placeholder="Age" type="number" onChange={(e) => setAge(parseInt(e.target.value, 10))} />
           </InputGroup>
         </InputHalf>
-        <InputHalf>
+        <div>
           <h2>$ {new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(total)}</h2>
           <Sparkline width={500} height={350} data={trend} />
-        </InputHalf>
+        </div>
       </Layout>
     </Page>
   )
