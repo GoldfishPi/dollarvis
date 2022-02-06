@@ -31,8 +31,8 @@ const InputHalf = styled.div`
 
 const calculateCompoundInterest = (p: number, interestRate: number, time: number) => Math.round(p * (1 + interestRate) ** time)
 const IndexPage = () => {
-  const [age, setAge] = React.useState<number>()
-  const [principal, setPrincipal] = React.useState<number>()
+  const [age, setAge] = React.useState<number>(0)
+  const [principal, setPrincipal] = React.useState<number>(0)
   const [end] = React.useState(60)
   const [interestRate] = React.useState(0.07)
 
