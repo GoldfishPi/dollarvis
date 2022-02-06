@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Page from '../components/Page'
 import styled from '@emotion/styled'
+import Page from '../components/Page'
 import { NumperInput } from '../components/NumperInput'
 import { Sparkline } from '../components/Sparkline'
 
@@ -56,8 +56,8 @@ const IndexPage = () => {
             As we get older compound interest gets less time to take effect. Use this tool to determine how much your money really costs!
           </p>
           <InputGroup>
-            <NumperInput placeholder="Spend" type="number" onChange={(e) => setPrincipal(e.target.value)} />
-            <NumperInput placeholder="Age" type="number" onChange={(e) => setAge(parseInt(e.target.value, 10))} />
+            <NumperInput placeholder="Spend" type="number" onChange={e => setPrincipal(parseInt(e.currentTarget.value, 10))} />
+            <NumperInput placeholder="Age" type="number" onChange={e => setAge(parseInt(e.currentTarget.value, 10))} />
           </InputGroup>
         </InputHalf>
         <div>
